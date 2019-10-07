@@ -1,0 +1,61 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Physical Inactivity Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                    <th>Chart</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.inactivityClass}}>
+                        <td><strong>Physical Inactivity:</strong></td>
+                        <td>{{data.inactivity_value}}</td>
+                        <td>{{data.inactivity_score}}/12</td>
+                        <td>{{vm.inactivityRisk}}</td>
+                        <td><button ng-click="vm.getInactivityData(vm.id)" class="btn btn-primary">Chart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        Currently, physical inactivity has dethroned smoking as the world’s number cause of death. 
+        The harmful impacts of physical inactivity includes abnormal metabolism activity as well as 
+        the capacity to negate the benefits of regular physical activity.
+    </br>
+</br>
+        The link between physical activity and poor health is not new. In the late 1940s a study 
+        conducted with London’s bus drivers noticed that drivers had significantly higher rates of 
+        cardiovascular diseases when compared to the conductors. Attributing this to the fact that 
+        conductors were active while walking up and down aisles (and stairs) while bus driver sat for 
+        the entire length of their shifts.
+    </br>
+</br>
+        Modern societies have served to further decrease the need for physical activity and with it 
+        we are observing higher than ever rates of metabolic and cardiovascular diseases. A study 
+        conducted in Australia, more recently (2012), linked sitting time to mortality rates concluding 
+        that prolonged sitting lead to -5 years in longevity. Furthermore, and perhaps scarier, this 
+        finding was still valid even if the individuals were physically active.
+    </br>
+</br>
+        In more recent publications, and on the brighter side of light, researchers in Norway have 
+        demonstrated that reducing physical inactivity (by increasing cardiorespiratory fitness) can 
+        extend individuals life up to 5 years. In fact, for every significant increase if fitness 
+        capacity (1 MET) individuals added (theoretically) 45 more days of living on this earth.
+    </br>
+</br>
+        In light of past and future findings, prevention of prolong periods of physical inactivity 
+        should be step #1 in the decreasing metabolic and heart diseases, and enhancing health. 
+    </div>
+ 
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+        </div>

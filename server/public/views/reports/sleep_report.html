@@ -1,0 +1,53 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Sleep Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                    <th>Chart</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.sleepClass}}>
+                        <td><strong>Sleep (hrs/night):</strong></td>
+                        <td>{{data.sleep_value}}</td>
+                        <td>{{data.sleep_score}}/10</td>
+                        <td>{{vm.sleepRisk}}</td>
+                        <td><button ng-click="vm.getSleepData(vm.id)" class="btn btn-primary">Chart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        In a world where time is money, sleep is a luxury. This mentality has lead 33% of Americans 
+        to get less than the 7 hours of sleep recommended for optimal health every night (Centers for 
+        Disease Control and Prevention, CDC).
+    </br>
+</br>
+        The impacts of chronic lack of sleep are multi-factorial and include declines in physical 
+        health, mental cognition, and motor safety. The CDC has linked inadequate sleep (7 hours or 
+        less) to increased risk for cardiovascular diseases (CVD), type II diabetes, incidence of 
+        stroke, and depression. 
+    </br>
+</br>
+        nadequate sleep also poses a threat to others, the National Highway Traffic Safety 
+        Administration (NHTSA) reported that a staggering 1 out of 25 adults surveyed had fallen 
+        asleep behind the wheels in the last 30 days prior to the study. Drowsy driving is linked 
+        annually to 83,000 crashes, of which 37,000 have lead to injuries and 886 have lead to 
+        fatality. The NHTSA cautions consideration of the above statistics as they are far too 
+        conservative; they estimate that up to 6,000 auto-fatalities can be linked to drowsy driving.
+    </br>
+</br>
+        <a href="https://www.cdc.gov/sleep/index.html" target="_blank">Learn More!</a>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+        </div>

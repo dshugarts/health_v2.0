@@ -1,0 +1,68 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Stress Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.stressClass}}>
+                        <td><strong>Total Stress:</strong></td>
+                        <td>{{vm.stressDisplay}}</td>
+                        <td>{{data.stress_score}}/10</td>
+                        <td>{{vm.stressRisk}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        According to the American Psychological Association the three major causes of stress in the 
+        U.S. today are money, work and family responsibilities, with 67%, 65% and 54% of Americans 
+        reporting experiencing major feelings of stress in those categories, respectively. Adults 
+        report stress to cause negative impacts on both their physical and mental health; yet, the 
+        majority feel as if they do not do enough to proactively cope with it. 
+    </br>
+</br>
+        The impacts of stress, if left unchecked, can lead to mental health diagnosis such as 
+        depression, anxiety, and other mood disorders as well as changes in biometrics such as 
+        increases in weight and/or blood pressure. Stress is also a well-known contributor to the 
+        development of metabolic disease (i.e.: diabetes) and cardiovascular diseases. 
+    </br>
+</br>
+        For example, the over reliance on the stress response is harmful in many ways and has a 
+        direct impact on your cardiovascular system. The stress response causes a phenomenon in your 
+        arteries known as vasoconstriction - the arteries of your body narrow in diameter in other to 
+        facilitate blood flow to muscles and tissues. Each individual stress response elevates blood 
+        pressure. With each, and more stressful, events leading to higher levels of Systolic and 
+        Diastolic pressures. In other words, stress has a significant and powerful impact on blood 
+        pressure.
+    </br>
+</br>
+        In its recent report on stress the APA also showcases alarming data that the younger section 
+        of our population demonstrates the highest rate of “poor mental” health. However, as pointed 
+        out by the Boynton Health’s College Student Health Survey, the amount of stress one has may 
+        have less devastating impacts to one’s health if they are well suited to appropriately cope 
+        with them. In other words, it may be more about learning to cope with current stressors rather 
+        than eliminating or (even worse) neglecting its existence.
+    </br>
+</br>
+        <a href="https://www.apa.org/news/press/releases/stress/2018/stress-gen-z.pdf" target="_blank">More Information</a>
+</br>
+        <a href="https://www.apa.org/news/press/releases/stress/index" target="_blank">Additional Information</a>
+</br>
+        <a href="https://boynton.umn.edu/surveys" target="_blank">UMN Research</a>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+        </div>
+    </br>
+</br>      

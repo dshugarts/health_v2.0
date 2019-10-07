@@ -1,0 +1,65 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Improving Waist Size</h2>
+    </div>
+    </br>
+    </br>
+
+<div class="container">
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.waistClass}}>
+                        <td><strong>Waist Size (in.):</strong></td>
+                        <td>{{data.waist_value}}</td>
+                        <td>{{data.waist_score}}/10</td>
+                        <td>{{vm.waistRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+        </div>
+    </br>
+</br>
+<div class="container">
+    <h4><strong>Overview</strong></h4>
+    Current research indicates waist obesity to be a major health concern, not necessary directly to 
+    the amount of fat one contains, but because is an indication of systemic inflammation. This 
+    does not mean you have a fever or are sick, it means that the body is constantly fighting 
+    stressors and poor nutrients and this can have severe negative outcomes to your health.
+</br>
+</br>
+    <h4><strong>Nutrition</strong></h4>
+    In order to control waist size one must pay attention to their nutrition and stress (of
+    course physical activity expedites health improvements). Nutritionally speaking,
+    seek foods that are anti-inflammatory such as foods containing probiotics and anti-
+    oxidants (examples include fermented foods and red fruits, respectively). These
+    small additions will give your body the tools to properly reduce inflammation; at the
+    same time, reduce consumption of foods containing added sugar, preservatives, and
+    processed oils as they have been labeled pro-inflammatory.
+</br>
+</br>
+    <h4><strong>Stress Response</strong></h4>
+    During stressful times, the body releases a hormone that triggers the use of sugars
+    in your blood. It may seem as good thing at first, but the constant activation of stress
+    will leave you depleted of sugar in the blood and exhausted; in other words you are   
+    tired and hangry. Typically, people in stressful times don’t tend to choose healthy
+    foods as an option, not because they don’t know the difference between right or
+    wrong, but driven from a physiological need to replace energy sources. Minimize the
+    stress in your life by avoiding situations that trigger this physiological response -
+    that will help you curb the need for constant sugar and push you away from that
+    midday crash.
+</div>
+</br>
+</br>
+<div class="container">
+        <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+    </div>
+</br>
+</br>

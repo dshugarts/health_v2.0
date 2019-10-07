@@ -1,0 +1,71 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Improving Physical Inactivity</h2>
+    </div>
+    </br>
+    </br>
+
+<div class="container">
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.inactivityClass}}>
+                        <td><strong>Physical Inactivity:</strong></td>
+                        <td>{{data.inactivity_value}}</td>
+                        <td>{{data.inactivity_score}}/12</td>
+                        <td>{{vm.inactivityRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+        </div>
+    </br>
+</br>
+<div class="container">
+    <h4><strong>Overview</strong></h4>
+    Movement is required for you to exercise; however, to equate movement with exercise is erroneous 
+    and perhaps one of the barriers why so many of us are sedentary. Mathematically speaking: 
+    Movement ≠ Exercise, but exercise completion is dependent on how much you move.
+</br>
+</br>
+    Most people are taught that the shortest way to health is to “eat less, exercise more”, so far… 
+    this is not working so great as, simply put, people are not doing it. What should be told, and is 
+    far more realistic, is to “eat the right foods, and move more”.
+</br>
+</br>
+    Breaking up the amount of time of inactivity in your day has been demonstrated to improve your 
+    health, including alteration to mood and blood values. Research indicates that the detrimental 
+    impacts of physical inactivity happen when we sit for more than 2 hours at a time. Henceforth, be 
+    more cognizant of your sitting time (or even set an timer on your phone) in which you must stand 
+    up for at least 5 min (10 is preferred) every 2 hours.
+</br>
+</br>
+    This does not necessarily mean you are losing 10 minutes of productivity of your day, I fact 
+    data shows this little physical break also brings along positive impacts to your brain. Instead 
+    of sending an email to a co-worker that is down the hall, go see them. Need a bathroom break? How 
+    about some water? All of these things can help you boost your productivity at work while 
+    combating common ailments to your overall health.
+</br>
+</br>
+    Even at home is easy to add more movement to your day. Binge watching TV series has becomes 
+    America’s new past time, and without commercial interruption during and in between shows, people 
+    no longer see the need to get up off the couch. Results from recent survey indicates that 
+    Americans spent (on average) 5 hours sitting in front of the TV. The same rules apply here as 
+    they did in the office: stand up between each episode (if an hour long) or two episodes (if your 
+    traditional comedy) and take a bathroom break, refill your water, and/or get a snack (chose the 
+    right ones). The important thing is not too sit for too long without fighting gravity, give your 
+    body little doses of gravitational reality and your health will thank you.   
+</div>
+</br>
+</br>
+<div class="container">
+        <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+    </div>
+</br>
+</br>

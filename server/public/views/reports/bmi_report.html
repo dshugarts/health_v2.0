@@ -1,0 +1,39 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>My Body Mass Index (BMI) Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Risk Level</th>
+                    <th>Chart</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.bmiClass}}>
+                        <td><strong>Body Mass Index (BMI):</strong></td>
+                        <td>{{vm.mybmi}}</td>
+                        <td>{{vm.bmiRisk}}</td>
+                        <td><button ng-click="vm.getbmiData(vm.id)" class="btn btn-primary">Chart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        {{vm.bmiReport}}
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7jlu9YHsmC4?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+        </div>
+</br>
+</br>

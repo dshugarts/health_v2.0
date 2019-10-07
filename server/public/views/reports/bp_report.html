@@ -1,0 +1,74 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+    <h2>Blood Pressure Report</h2>
+</br>
+</br>
+    <table class="table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Points Earned</th>
+                <th>Risk Level</th>
+                <th>Chart</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="data in vm.dataArray.list">
+                <tr class={{vm.bpClass}}>
+                   <td><strong>Blood Pressure:</strong></td>
+                    <td>{{data.systolic_value}}/{{data.diastolic_value}}</td>
+                    <td>{{data.bp_score}}/12</td>
+                    <td>{{vm.bpRisk}}</td>
+                    <td><button ng-click="vm.getBpData(vm.id)" class="btn btn-primary">Chart</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    Blood Pressure is the measurement of pressure that blood exerts against the arterial walls during 
+    two specific instances of heart functioning: contraction (systolic blood pressure) and relaxation 
+    (diastolic blood pressure). Henceforth, blood pressure is always represented with two numbers: a 
+    top number quantifying the pressure blood exerts on arterial walls as the heart contracts, and a 
+    bottom number quantifying the pressure of blood on the artery’s wall as the heart relaxes.
+</br>
+</br>
+    Blood pressure has a dose-response relationship to heart disease risk, in the sense that as blood 
+    pressure rises so does the risk for developing a cardiovascular disease (CVD). Considered to be 
+    the silent killer due to an absence in manifestation of physical and mental symptoms, high blood 
+    pressure presents great challenges to the maintenance of heart health. 
+</br>
+</br>
+    The American College of Cardiology (ACC) and the American Heart Association (AHA) have recently 
+    updated guidelines for the identification of blood pressure, prevention strategies for risk 
+    development, and treatment options for hypertension. The new guidelines establish that significant 
+    risk for development of CVD start at blood pressure values falling within 130-139 mmHg of systolic 
+    pressure and/or 80-89 mmHg of diastolic blood pressure (Stage I Hypertension). As risk for CVD 
+    mortality increases with blood pressure, the ACC-AHA guidelines are established as follows:
+</br>
+</br>
+    Elevated Blood Pressure: Systolic between 120-129 and Diastolic less than 80.
+</br>
+    Stage I Hypertension: Systolic between 130-139 or diastolic between 80-89.
+</br>
+    Stage II Hypertension: Stage 2: Systolic at least 140 or diastolic at least 90mmHg.
+</br>
+    Hypertensive Crisis: Systolic over 180 and/or diastolic over 120, with patients needing 
+    prompt changes in medication if there are no other indications of problems, or immediate 
+    hospitalization if there are signs of organ damage
+</br>
+</br>
+    <a href="http://circ.ahajournals.org/content/129/25_suppl_2/S49#T6 
+    http://www.acc.org/latest-in-cardiology/articles/2017/11/08/11/47/mon-5pm-bp-guideline-aha-2017" target="_blank">Learn More!</a>
+</div>
+</br>
+</br>
+<div class="container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sOwBDmu1Y0c?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</br>
+</br>
+<div class="container">
+        <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+    </div>
+</br>
+</br>

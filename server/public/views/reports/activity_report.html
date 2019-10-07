@@ -1,0 +1,63 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Physical Activity Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                    <th>Chart</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.activityClass}}>
+                        <td><strong>Physical Activity (min/week):</strong></td>
+                        <td>{{data.physical_activity_value}}</td>
+                        <td>{{data.physical_activity_score}}/16</td>
+                        <td>{{vm.activityRisk}}</td>
+                        <td><button ng-click="vm.getActivityData(vm.id)" class="btn btn-primary">Chart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        The benefits of physical activity reach far and wide into any health-related biometric and 
+        are far too numerous to list in this short excerpt. This statement is also true about the 
+        lack of physical activity, although on this end of the spectrum the scale is tilted towards 
+        metabolic diseases rather than health.
+    </br>
+</br>
+        The World Health Organization has just recently declared physical inactivity as the 4th 
+        leading cause of mortality in the world as wells as attributing it as one of the leading cause 
+        of noncommunicable diseases (NCC) – such as: type II diabetes, cardiovascular diseases (CVD), and 
+        cancer.
+    </br>
+</br>
+        In a manuscript published in the National Institute of Health (NIH) by the Human Health Services 
+        (HHS) is estimated that elimination of physical inactivity can reduce 6-10% of all NCCs worldwide. 
+        Potentially saving millions of lives and billions of dollars.
+    </br>
+</br>
+        According to U.S. Surgeon’s general and in agreement with the guidelines set forth by the American 
+        College of Sports Medicine, the devastating impacts of physical inactivity can be offset with as little as 
+        150 minutes of moderate physical activity every week.
+    </br>
+</br>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3645500/" target="_blank">Learn More! (NIH)</a>
+</br>
+        <a href="http://www.who.int/mediacentre/factsheets/fs385/en/" target="_blank">Learn More! (WHO)</a>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wWGulLAa0O0?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+        </div>

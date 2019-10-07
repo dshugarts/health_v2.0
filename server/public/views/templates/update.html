@@ -1,0 +1,79 @@
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+  <h2>Enter New Data</h2>
+  <form class="col-md-12" id="dataForm">
+    <div class="form-group col-md-6">
+        <label for="height">Height (in.):</label>
+        <input type="text" name="height" class="form-control" ng-model="vm.newEntry.height_value" placeholder="Height (in.)"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="weight">Weight (lbs.):</label>
+        <input type="text" name="weight" class="form-control" ng-model="vm.newEntry.weight_value" placeholder="Weight (lbs.)"/>
+        </div>
+      <div class="form-group col-md-6">
+      <label for="age">Age:</label>
+      <input type="text" name="age" class="form-control" ng-model="vm.newEntry.age_value" placeholder="Age"/>
+      </div>
+      <div class="form-group col-md-6">
+      <label for="waist">Waist Size (in.):</label>
+      <input type="text" name="waist" class="form-control" ng-model="vm.newEntry.waist_value" placeholder="Waist Size (in.)"/>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="systolic">Systolic Pressure:</label>
+        <input type="text" name="systolic" class="form-control" ng-model="vm.newEntry.systolic_value" placeholder="Systolic Pressure"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="diastolic">Diastolic Pressure:</label>
+        <input type="text" name="diastolic" class="form-control" ng-model="vm.newEntry.diastolic_value" placeholder="Diastolic Pressure"/>
+        </div>
+      <div class="form-group col-md-6">
+        <label for="hdl">HDL:</label>
+        <input type="text" name="hdl" class="form-control" ng-model="vm.newEntry.hdl_value" placeholder="HDL"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="ldl">LDL:</label>
+        <input type="text" name="ldl" class="form-control" ng-model="vm.newEntry.ldl_value" placeholder="LDL"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="glu">Fasting Glucose:</label>
+        <input type="text" name="glu" class="form-control" ng-model="vm.newEntry.glu_value" placeholder="Fasting Glucose"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="trg">Triglycerides:</label>
+        <input type="text" name="trg" class="form-control" ng-model="vm.newEntry.trg_value" placeholder="Triglycerides"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="activity">Moderate Physical Activity (min/week):</label>
+        <input type="text" name="activity" class="form-control" ng-model="vm.newEntry.physical_activity_value" placeholder="Moderate Physical Activity (min/week)"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="sleep">Sleep (hrs/night):</label>
+        <input type="text" name="sleep" class="form-control" ng-model="vm.newEntry.sleep_value" placeholder="Hours of Sleep (hrs/night)"/>
+        </div>
+    <div class="form-group col-md-3">
+        <label>Nicotine Use?:</label>
+        <label class="radio-inline" for="nicotine">
+        <input type="radio" name="nicotine" ng-model="vm.newEntry.nicotine_value" value="false">No</label>
+        <label class="radio-inline" for="nicotine">
+        <input type="radio" name="nicotine" ng-model="vm.newEntry.nicotine_value" value="true">Yes</label>
+    </div>
+    <div class="form-group col-md-3">
+        <label>Gender:</label>
+        <label class="radio-inline" for="gender">
+        <input type="radio" name="gender" ng-model="vm.newEntry.gender" value="F">F</label>
+        <label class="radio-inline" for="gender">
+        <input type="radio" name="gender" ng-model="vm.newEntry.gender" value="M">M</label>
+        </div>
+    <div class="form-group col-md-6">
+        <label>Was your father diagnosed with Heart Disease before age 55 and/or mother before age 65?:</label>
+        <label class="radio-inline" for="history">
+        <input type="radio" name="history" ng-model="vm.newEntry.family_history_value" value="false">No</label>
+        <label class="radio-inline" for="history">
+        <input type="radio" name="history" ng-model="vm.newEntry.family_history_value" value="true">Yes</label>
+        </div>
+      <div class="form-group col-md-8">
+      <button ng-click="vm.addEntry(vm.newEntry, vm.id)" class="btn btn-success">Submit Data</button>
+      <button ng-click="vm.dataView()" class="btn btn-danger">Back</button>
+      </div>
+      </form>
+</div>

@@ -1,0 +1,52 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Waist Size Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                    <th>Chart</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.waistClass}}>
+                        <td><strong>Waist Size (in.):</strong></td>
+                        <td>{{data.waist_value}}</td>
+                        <td>{{data.waist_score}}/10</td>
+                        <td>{{vm.waistRisk}}</td>
+                        <td><button ng-click="vm.getWaistData(vm.id)" class="btn btn-primary">Chart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        Recently established as an independent risk factor for development of cardiovascular disease 
+        (CVD), it is the measurement of ones waist circumference. According to the National Heart, 
+        Lung, and Blood Institute (NHLBI) waist circumference is linked to metabolic disorders such 
+        as type II diabetes, stroke, and heart diseases. In agreement, the Human Health Services 
+        (HHS) in a manuscript published at the National Institute of Health (NIH) provided evidence 
+        to the strong predictive power of waist size in predicting incidence of CVDs and found that 
+        larger circumferences significantly increase the occurrence of heart problems.
+    </br>
+</br>
+        Accumulation of excess body fat tends to be centered on one’s waist in times of stress, in 
+        the presence of poor nutrition, and in the absence of physical activity. Therefore, waist 
+        size has been linked to systemic inflammation - a condition promoting of numerous metabolic 
+        disorders; and therefore, extremely detrimental to health. It is a simple and cheap 
+        measurement that is highly modifiable by controllable actions.   
+    </br>
+</br>
+        <a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/risk.htm" target="_blank">Learn More!</a>
+</br>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2992336/" target="_blank">Additional Information</a>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+        </div>

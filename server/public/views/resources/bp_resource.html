@@ -1,0 +1,84 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Improving Blood Pressure</h2>
+    </div>
+    </br>
+    </br>
+
+<div class="container">
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.bpClass}}>
+                        <td><strong>Blood Pressure:</strong></td>
+                        <td>{{data.systolic_value}}/{{data.diastolic_value}}</td>
+                        <td>{{data.bp_score}}/12</td>
+                        <td>{{vm.bpRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+        </div>
+    </br>
+</br>
+<div class="container">
+    <h4><strong>Overview</strong></h4>
+        The approach to treat and prevent hypertension is multi-factorial in nature and may
+        include changes to your diet, stress, and physical activity. This is not to say that all
+        must be modified at the same time; changes in any of these categories,
+        independently, haven shown to be beneficial in reversing the rise in high blood
+        pressure in symptomatic individuals.
+</br>
+</br>
+    <h4><strong>Nutrition</strong></h4>
+        The recommend approach for those with hypertension is to follow the Dietary
+        Approach for Stopping Hypertension (DASH) guidelines, which is supported by
+        trusted organization such as the National Heart, Lung, and Blood Institute (NHLB)
+        and the Mayo clinic. The hallmark of this action plan is to focus on consumption of
+        vegetables, fruits and low-fat dairy foods; along with moderate amounts of whole
+        grains, fish, poultry and nuts. Due to the close relationship between Sodium intake
+        and blood pressure a modified DASH does exist that emphasizes reduction of this
+        mineral from your food.
+    </br>
+</br>
+    <h4><strong>Stress Management</strong></h4>
+        Evolutionary speaking, stress is a natural human response to life-threatening situations. 
+        As the human species evolved, and with it the commodities of modern life, we have stopped 
+        concerning ourselves with lions and tigers, and have replaced the stress responses towards 
+        more constant threats, such as job responsibilities, financial obligation, timely commutes, 
+        etc. In fact, according to the American Psychological Association the three major causes of 
+        stress in the U.S. today are money, work and family responsibilities, with 67%, 65% and 54% 
+        of Americans reporting experiencing major feelings of stress in those categories, 
+        respectively. 
+    </br>
+</br>
+        In order to control your stress many strategies are available in which are easy and simple 
+        to use. They can range from engaging in mind-body activities such as Yoga and meditation, 
+        to simply spending time with loved ones and friends. The idea is for you to create an 
+        environment in which you mind can be occupied by tasks that are enjoyable to you and 
+        take your mind always from threats; not a fan of Yoga or a pint with friends? Find a new 
+        hobby you can enjoy doing.
+    </br>
+</br>
+    <h4><strong>Physcial Activity</strong></h4>
+        The minimum recommendation for physical activity of 150 minutes a week of moderate aerobic 
+        activity per week was not set arbitrarily. This, according to numerous research papers, is 
+        the amount of time necessary for the body to respond to the effects of exercise in a positive 
+        way. The benefits are too many to list here, but direct to blood pressure they include: 
+        improved heart function, reduction in resting heart rate, increase vascularization of muscle, 
+        and enhanced ability to manage stress (and its hormones) – all in all an very effective way to 
+        reduce blood pressure.
+</div>
+</br>
+</br>
+<div class="container">
+        <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+    </div>
+</br>
+</br>

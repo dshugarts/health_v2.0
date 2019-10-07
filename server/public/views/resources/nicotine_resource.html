@@ -1,0 +1,52 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Improving Nicotine Use</h2>
+    </div>
+    </br>
+    </br>
+
+<div class="container">
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.nicotineClass}}>
+                        <td><strong>Nicotine Use:</strong></td>
+                        <td>{{vm.nicotineDisplay}}</td>
+                        <td>{{data.nicotine_score}}/10</td>
+                        <td>{{vm.nicotineRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+        </div>
+    </br>
+</br>
+<div class="container">
+    <h4><strong>Overview</strong></h4>
+    The risks associated from habitual use of nicotine via tobacco are well established and well 
+    known. It is harmful to your health and one of the leading causes of death worldwide. Similarly, 
+    the benefits of tobacco cessation are equally known and widespread. It improves all health 
+    metrics both physical and psychological on both short- and long-term durations.
+</br>
+</br>
+    If you are thinking about quitting smoking, the one recommendation set forth here is that you 
+    don’t do it alone. There are experienced and qualified professionals that can guide you to 
+    successfully complete this hard task, as well as many individuals that have in the past conquered 
+    their addiction of nicotine and can offer relatable advice based on experiences. If you are 
+    currently employed, contact your HR department and ask them about their EAP program and whether 
+    or not it offers tobacco cessation assistance. Alternatively, visit smokefree.gov for free advice 
+    and resources on how to kick cigarette to the curb.
+</div>
+</br>
+</br>
+<div class="container">
+    <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+</div>
+</br>
+</br>

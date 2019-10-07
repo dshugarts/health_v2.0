@@ -1,0 +1,127 @@
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+  <h2>Enter New Data</h2>
+  <form class="col-md-12">
+    <div class="form-group col-md-6">
+        <label for="height">Height (in.):</label>
+        <input type="text" name="height" class="form-control" ng-model="vm.newEntry.height_value" placeholder="Height (in.)"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="weight">Weight (lbs.):</label>
+        <input type="text" name="weight" class="form-control" ng-model="vm.newEntry.weight_value" placeholder="Weight (lbs.)"/>
+        </div>
+    </form>
+    <form class="col-md-12">
+      <div class="form-group col-md-6">
+      <label for="age">Age:</label>
+      <input type="text" name="age" class="form-control" ng-model="vm.newEntry.age_value" placeholder="Age"/>
+      </div>
+      <div class="form-group col-md-6">
+      <label for="waist">Waist Size (in.):</label>
+      <input type="text" name="waist" class="form-control" ng-model="vm.newEntry.waist_value" placeholder="Waist Size (in.)"/>
+      </div>
+    </form>
+    <form class="col-md-12">
+      <div class="form-group col-md-6">
+        <label for="systolic">Systolic Pressure:</label>
+        <input type="text" name="systolic" class="form-control" ng-model="vm.newEntry.systolic_value" placeholder="Systolic Pressure"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="diastolic">Diastolic Pressure:</label>
+        <input type="text" name="diastolic" class="form-control" ng-model="vm.newEntry.diastolic_value" placeholder="Diastolic Pressure"/>
+        </div>
+    </form>
+    <form class="col-md-12">
+      <div class="form-group col-md-6">
+        <label for="acitvity">Moderate Physical Activity (min/week):</label>
+        <input type="text" name="activity" class="form-control" ng-model="vm.newEntry.physical_activity_value" placeholder="Moderate Physical Activity (min/week)"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="inactivity">Physical Inactivity (min):</label>
+    </br>
+        <i>On a typical day, and on average, how many consecutive minutes you spend sitting without getting up?</i>
+</br>
+</br>
+        <input type="text" name="inactivity" class="form-control" ng-model="vm.newEntry.inactivity_value" placeholder="Physical Inactivity (min.)"/>
+        </div>
+    </form>
+    <form class="col-md-12">
+    <div class="form-group col-md-6">
+        <label for="sleep">Sleep (hrs/night):</label>
+        <input type="text" name="sleep" class="form-control" ng-model="vm.newEntry.sleep_value" placeholder="Hours of Sleep (hrs/night)"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label>ACSM Risk Questions:</label>
+        <div class="radio" for="acsm">
+        <label><input type="radio" name="acsm" ng-model="vm.newEntry.acsm_value" value="No">No to all questions</label>
+        </div>
+        <div class="radio" for="acsm">
+        <label><input type="radio" name="acsm" ng-model="vm.newEntry.acsm_value" value="Yes">Yes to at least 1 question</label>
+        </div>
+        </div>
+    </form>
+    <form class="col-md-12">
+    <div class="form-group col-md-6">
+        <label>What would you rate your current level of stress in the past 14 days?</label>
+    </br>
+        <i>(0= no stress at all, 1 = low, 2 = moderate, 3 = moderate-high, 4 = high, 5 = extremely stressful)</i>
+    </br>
+</br>
+        <div class="radio" for="total_stress">
+        <label><input type="radio" name="total_stress" ng-model="vm.newEntry.total_stress_value" ng-click="vm.stressCube(vm.newEntry.total_stress_value)" value="false">0-2</label>
+        </div>
+        <div class="radio" for="total_stress">
+        <label><input type="radio" name="total_stress" ng-model="vm.newEntry.total_stress_value" ng-click="vm.stressBlock(vm.newEntry.total_stress_value)" value="true">3-5</label>
+        </div>
+        </div>
+    <div class="form-group col-md-6" ng-show="vm.stressManagement">
+        <label>Bases on your answer about stress, how would you rate your current ability to manage it in the past 14 days?</label>
+    </br>
+        <i>(0 = I have no control of it, 1 = I constantly feel I “take 2 steps forward and take 3 steps back”, 2 = I don’t know how to manage it, 3 = I have difficulties managing it, 4 = I have a good handle on it, 5 = I have no issues managing it)</i>
+        </br>
+    </br>
+        <div class="radio" for="stress_management">
+        <label><input type="radio" name="stress_management" ng-model="vm.newEntry.stress_management_value" value="5">4-5</label>
+        </div>
+        <div class="radio" for="stress_management">
+        <label><input type="radio" name="stress_management" ng-model="vm.newEntry.stress_management_value" value="3">3</label>
+        </div>
+        <div class="radio" for="stress_management">
+        <label><input type="radio" name="stress_management" ng-model="vm.newEntry.stress_management_value" value="0">0-2</label>
+        </div>
+        </div>
+    </form>
+    <form class="col-md-12">
+    <div class="form-group col-md-3">
+        <label>Nicotine Use?:</label>
+        <div class="radio" for="nicotine">
+        <label><input type="radio" name="nicotine" ng-model="vm.newEntry.nicotine_value" value="false">No</label>
+        </div>
+        <div class="radio" for="nicotine">
+        <label><input type="radio" name="nicotine" ng-model="vm.newEntry.nicotine_value" value="true">Yes</label>
+        </div>
+        </div>
+    <div class="form-group col-md-3">
+        <label>Gender:</label>
+        <div class="radio" for="gender">
+        <label><input type="radio" name="gender" ng-model="vm.newEntry.gender" value="F">F</label>
+        </div>
+        <div class="radio" for="gender">
+        <label><input type="radio" name="gender" ng-model="vm.newEntry.gender" value="M">M</label>
+        </div>
+        </div>
+    <div class="form-group col-md-6">
+        <label>Was your father diagnosed with Heart Disease before age 55 and/or mother before age 65?:</label>
+        <label class="radio-inline" for="history">
+        <input type="radio" name="history" ng-model="vm.newEntry.family_history_value" value="false">No</label>
+        <label class="radio-inline" for="history">
+        <input type="radio" name="history" ng-model="vm.newEntry.family_history_value" value="true">Yes</label>
+        </div>
+      <div class="form-group col-md-8">
+      <button ng-click="vm.packEntry(vm.newEntry, vm.id)" class="btn btn-success">Submit Data</button>
+      <button ng-click="vm.dashView()" class="btn btn-danger">Back</button>
+      </div>
+      </form>
+</div>
+</br>
+</br>

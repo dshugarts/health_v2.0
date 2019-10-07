@@ -1,0 +1,623 @@
+<div ng-include="'views/partials/nav.html'"></div>
+
+<div class="container">
+        <h2>Wellness Score</h2>
+    <table class="table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Maximum Wellness Points</th>
+                <th>Risk Level</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="data in vm.dataArray.list">
+            <tr class={{vm.wellClass}}>
+                <td>Wellness Score:</td>
+                <td>{{data.well_score}}</td>
+                <td>100</td>
+                <td>{{vm.wellRisk}}</td>
+            </tr>
+</tbody>
+</table>
+</div>
+</br>
+
+<div class="container">
+    <button ng-click="vm.print()" class="btn btn-success">Print Report</button>
+</div>
+</br>
+
+<div ng-show="vm.ageButton">
+<div class="container">
+    <h2>Age</h2>
+    <table class="table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Points Earned</th>
+                <th>Risk Level</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="data in vm.dataArray.list">
+                <tr class={{vm.ageClass}}>
+                    <td><strong>Age:</strong></td>
+                    <td>{{data.age_value}}</td>
+                    <td>{{data.age_score}}/5</td>
+                    <td>{{vm.ageRisk}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    The National Institute of Health (NIH) has established that age is an independent risk factor 
+    for the development of cardiovascular diseases (CVD). In others words, despite the presence 
+    (or absence) of other risk factors age contributes to an increase in risk for developing some 
+    form of heart disease.
+</br>
+</br>
+    It is of importance to note that risk for CVD development and life expectancy are not be used 
+    as synonyms. Evidence suggests that in the absence of other risk factors longevity is significantly 
+    increased.
+</br>
+</br>
+    In conclusion, even though one can not stop the chronological declines observed in human 
+    physiology one can attenuate its impacts by having physically active, nutritionally balanced, 
+    and stress-coping habits.
+</div>
+</br>
+</br>
+</div>
+
+<div ng-show="vm.bpButton">
+    <div class="container">
+        <h2>Blood Pressure</h2>
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.bpClass}}>
+                        <td><strong>Blood Pressure:</strong></td>
+                        <td>{{data.systolic_value}}/{{data.diastolic_value}}</td>
+                        <td>{{data.bp_score}}/12</td>
+                        <td>{{vm.bpRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+        </div>
+    <div class="container">
+    <h4><strong>Overview</strong></h4>
+        The approach to treat and prevent hypertension is multi-factorial in nature and may
+        include changes to your diet, stress, and physical activity. This is not to say that all
+        must be modified at the same time; changes in any of these categories,
+        independently, haven shown to be beneficial in reversing the rise in high blood
+        pressure in symptomatic individuals.
+    </br>
+    </br>
+    <h4><strong>Nutrition</strong></h4>
+        The recommend approach for those with hypertension is to follow the Dietary
+        Approach for Stopping Hypertension (DASH) guidelines, which is supported by
+        trusted organization such as the National Heart, Lung, and Blood Institute (NHLB)
+        and the Mayo clinic. The hallmark of this action plan is to focus on consumption of
+        vegetables, fruits and low-fat dairy foods; along with moderate amounts of whole
+        grains, fish, poultry and nuts. Due to the close relationship between Sodium intake
+        and blood pressure a modified DASH does exist that emphasizes reduction of this
+        mineral from your food.
+    </br>
+    </br>
+    <h4><strong>Stress Management</strong></h4>
+        Evolutionary speaking, stress is a natural human response to life-threatening situations. 
+        As the human species evolved, and with it the commodities of modern life, we have stopped 
+        concerning ourselves with lions and tigers, and have replaced the stress responses towards 
+        more constant threats, such as job responsibilities, financial obligation, timely commutes, 
+        etc. In fact, according to the American Psychological Association the three major causes of 
+        stress in the U.S. today are money, work and family responsibilities, with 67%, 65% and 54% 
+        of Americans reporting experiencing major feelings of stress in those categories, 
+        respectively. 
+    </br>
+    </br>
+        In order to control your stress many strategies are available in which are easy and simple 
+        to use. They can range from engaging in mind-body activities such as Yoga and meditation, 
+        to simply spending time with loved ones and friends. The idea is for you to create an 
+        environment in which you mind can be occupied by tasks that are enjoyable to you and 
+        take your mind always from threats; not a fan of Yoga or a pint with friends? Find a new 
+        hobby you can enjoy doing.
+    </br>
+    </br>
+    <h4><strong>Physcial Activity</strong></h4>
+        The minimum recommendation for physical activity of 150 minutes a week of moderate aerobic 
+        activity per week was not set arbitrarily. This, according to numerous research papers, is 
+        the amount of time necessary for the body to respond to the effects of exercise in a positive 
+        way. The benefits are too many to list here, but direct to blood pressure they include: 
+        improved heart function, reduction in resting heart rate, increase vascularization of muscle, 
+        and enhanced ability to manage stress (and its hormones) – all in all an very effective way to 
+        reduce blood pressure.
+</div>
+</br>
+</br>
+</div>
+
+<div ng-show="vm.stressButton">
+    <div class="container">
+        <h2>Stress</h2>
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.stressClass}}>
+                        <td><strong>Total Stress:</strong></td>
+                        <td>{{vm.stressDisplay}}</td>
+                        <td>{{data.stress_score}}/10</td>
+                        <td>{{vm.stressRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="container">
+    <h4><strong>Overview</strong></h4>
+    Evolutionary speaking, stress is a natural human response to life-threatening situations. As the 
+    human species evolved, and with it the commodities of modern life, we have stopped concerning 
+    ourselves with lions and tigers, and have replaced the stress responses towards more constant 
+    threats, such as job responsibilities, financial obligation, timely commutes, etc. In fact, 
+    according to the American Psychological Association the three major causes of stress in the U.S. 
+    today are money, work and family responsibilities, with 67%, 65% and 54% of Americans reporting 
+    experiencing major feelings of stress in those categories, respectively. 
+    </br>
+    </br>
+    A College Student Health Survey conducted in Minnesota by Boynton Health showed that the amount 
+    of stress student have may have less devastating impacts to one’s health if they are well suited 
+    to appropriately cope with them. In other words, it may of higher value to learn to cope with 
+    current stressors rather than trying to eliminate or (even worse) neglect their existence. 
+    Moreover, it may be that these same findings extend outside the confines of campuses and are true 
+    for working adults as well.
+    </br>
+    </br>
+    In order to better cope with stress it is first essential that its sources can be identified. 
+    Once identified, one must be able to determine his/her locust of control over it; can it be 
+    controllable? Here is an example, and a practical exercise you can employ:
+    </br>
+    </br>
+    <i>“You are about to fall asleep when you remember that you forgot to send an important work 
+    document to your boss. You toss and turn thinking about what will happen, you can even get up and 
+    send a panicked-hurried email to your boss to alleviate the situation. However, before you do all 
+    of the above think about the following questions: will sending this email, right now, change 
+    anything? Even if you do send the email at this time, will the recipient even see it?</i>
+    </br>
+    </br>
+    <i>You may feel better about sending the email, but in reality, the boss will not even see it until 
+    the start of the workday. Or, even worse, let’s say that they do see it! Now you have stressed 
+    your boss at a late time of the night; think they will be happier to see the email before they 
+    went to bed? Or in the morning, when they should actually be at work?”</i>
+    </br>
+    </br>
+    The example above can be used to many situations, banks for example do not complete transfers at 
+    night (bills paid at midnight won’t be posted until the next day’s work hours). The point here 
+    being that the past cannot be changed, no matter how hard you think of it; and the actions taken 
+    at the present moment may not always fix the problem. Now, if the answers to the questions is 
+    that your actions will change things, then go ahead, pull up those sleeves and get it done! If 
+    not, you are creating a life-threatening situation in your brain, and the body will respond 
+    accordingly.   
+    </br>
+    </br>
+    Controlling stress is about recognizing your role in engaging with the stress response in the 
+    first place. Additionally, try to find activities that you enjoy doing outside of work and other 
+    obligations. If you are feeling stressed and down, typically people ask “what is the matter with 
+    me”. Better yet, is asking your yourself “what matters to me”? This simple reframing can put 
+    things into perspective of where to better focus your energy and efforts.   
+    </br>
+    </br>
+    In a nutshell, there are many things one can do to control stress, but to say that there is one 
+    single solution to combat stress is fictional. Stress, and its subsequent control, is highly 
+    individual. Identify the sources of your stress, label your efforts and actions against realistic 
+    outcomes, and choose to address the things that are high on your “this matter to me” list.
+</div>
+</br>
+</br>
+</div>
+
+<div ng-show="vm.inactivityButton">
+    <div class="container">
+        <h2>Physical Inactivity</h2>
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.inactivityClass}}>
+                        <td><strong>Physical Inactivity:</strong></td>
+                        <td>{{data.inactivity_value}}</td>
+                        <td>{{data.inactivity_score}}/12</td>
+                        <td>{{vm.inactivityRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="container">
+    <h4><strong>Overview</strong></h4>
+    Movement is required for you to exercise; however, to equate movement with exercise is erroneous 
+    and perhaps one of the barriers why so many of us are sedentary. Mathematically speaking: 
+    Movement ≠ Exercise, but exercise completion is dependent on how much you move.
+    </br>
+    </br>
+    Most people are taught that the shortest way to health is to “eat less, exercise more”, so far… 
+    this is not working so great as, simply put, people are not doing it. What should be told, and is 
+    far more realistic, is to “eat the right foods, and move more”.
+    </br>
+    </br>
+    Breaking up the amount of time of inactivity in your day has been demonstrated to improve your 
+    health, including alteration to mood and blood values. Research indicates that the detrimental 
+    impacts of physical inactivity happen when we sit for more than 2 hours at a time. Henceforth, be 
+    more cognizant of your sitting time (or even set an timer on your phone) in which you must stand 
+    up for at least 5 min (10 is preferred) every 2 hours.
+    </br>
+    </br>
+    This does not necessarily mean you are losing 10 minutes of productivity of your day, I fact 
+    data shows this little physical break also brings along positive impacts to your brain. Instead 
+    of sending an email to a co-worker that is down the hall, go see them. Need a bathroom break? How 
+    about some water? All of these things can help you boost your productivity at work while 
+    combating common ailments to your overall health.
+    </br>
+    </br>
+    Even at home is easy to add more movement to your day. Binge watching TV series has becomes 
+    America’s new past time, and without commercial interruption during and in between shows, people 
+    no longer see the need to get up off the couch. Results from recent survey indicates that 
+    Americans spent (on average) 5 hours sitting in front of the TV. The same rules apply here as 
+    they did in the office: stand up between each episode (if an hour long) or two episodes (if your 
+    traditional comedy) and take a bathroom break, refill your water, and/or get a snack (chose the 
+    right ones). The important thing is not too sit for too long without fighting gravity, give your 
+    body little doses of gravitational reality and your health will thank you.   
+</div>
+</br>
+</br>
+</div>
+
+<div ng-show="vm.acsmButton">
+<div class="container">
+<h2>ACSM Risk Assessment</h2>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.acsmClass}}>
+                    <td><strong>ACSM Risk Questions:</strong></td>
+                    <td>{{data.acsm_value}}</td>
+                    <td>{{data.acsm_score}}/10</td>
+                    <td>{{vm.acsmRisk}}</td>
+                    </tr>
+    </tbody>
+    </table>
+</div>
+<div class="container">
+<h4><strong>Overview</strong></h4>
+The American College of Sports Medicine (ACSM) provides a research-based approach to the 
+prevention of cardiac events at the onset of physical activity.
+</br>
+</br>
+The questions provided in our screening process represent those that are suggestive of 
+cardiovascular diseases that have perhaps never been diagnosed in the past. If you 
+answered yes to any of the questions above, please seek out clearance from your physician 
+prior to starting any new exercise program.
+</div>
+</br>
+</br>
+</div>
+
+<div ng-show="vm.waistButton">
+    <div class="container">
+        <h2>Waist Size</h2>
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.waistClass}}>
+                        <td><strong>Waist Size (in.):</strong></td>
+                        <td>{{data.waist_value}}</td>
+                        <td>{{data.waist_score}}/10</td>
+                        <td>{{vm.waistRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+</div>
+    <div class="container">
+    <h4><strong>Overview</strong></h4>
+    Current research indicates waist obesity to be a major health concern, not necessary directly to 
+    the amount of fat one contains, but because is an indication of systemic inflammation. This 
+    does not mean you have a fever or are sick, it means that the body is constantly fighting 
+    stressors and poor nutrients and this can have severe negative outcomes to your health.
+    </br>
+    </br>
+    <h4><strong>Nutrition</strong></h4>
+    In order to control waist size one must pay attention to their nutrition and stress (of
+    course physical activity expedites health improvements). Nutritionally speaking,
+    seek foods that are anti-inflammatory such as foods containing probiotics and anti-
+    oxidants (examples include fermented foods and red fruits, respectively). These
+    small additions will give your body the tools to properly reduce inflammation; at the
+    same time, reduce consumption of foods containing added sugar, preservatives, and
+    processed oils as they have been labeled pro-inflammatory.
+    </br>
+    </br>
+    <h4><strong>Stress Response</strong></h4>
+    During stressful times, the body releases a hormone that triggers the use of sugars
+    in your blood. It may seem as good thing at first, but the constant activation of stress
+    will leave you depleted of sugar in the blood and exhausted; in other words you are   
+    tired and hangry. Typically, people in stressful times don’t tend to choose healthy
+    foods as an option, not because they don’t know the difference between right or
+    wrong, but driven from a physiological need to replace energy sources. Minimize the
+    stress in your life by avoiding situations that trigger this physiological response -
+    that will help you curb the need for constant sugar and push you away from that
+    midday crash.
+</div>
+</br>
+</br>
+</div>
+
+<div ng-show="vm.historyButton">
+<div class="container">
+    <h2>Family History</h2>
+    <table class="table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Points Earned</th>
+                <th>Risk Level</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="data in vm.dataArray.list">
+                <tr class={{vm.historyClass}}>
+                    <td><strong>Family History of CVDs:</strong></td>
+                    <td>{{vm.historyDisplay}}</td>
+                    <td>{{data.family_history_score}}/5</td>
+                    <td>{{vm.historyRisk}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    In a recent study published by the College of Family Physicians of Canada, evidence for 
+    development of cardiovascular diseases (CVD) based on family history is strong in the following 
+    circumstances. The offspring of parents with premature CVD have a 60% to 75% risk increase for 
+    CVD development. Additionally, siblings of patients with CVD have about a 40% risk increase.
+</br>
+</br>
+These findings are in agreement in numerous previous studies demonstrating similar strengths in 
+this relationship between CVD and family history. The Centers for Disease Control and Prevention 
+(CDC) provides in its website similar information pertaining to this topic.
+</br>
+</br>
+Important to note that although family history, and hence the genes received for your parents, 
+are not modifiable it does not establish certainty of disease development. Habitual acts of 
+physical activity, proper nutrition, and stress management are key in moderating genes and 
+preventing likelihood of disease development.
+</div>
+</br>
+</br>
+</div>
+
+<div ng-show="vm.activityButton">
+<div class="container">
+    <h2>Physical Activity</h2>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.activityClass}}>
+                    <td><strong>Physical Activity (min/week):</strong></td>
+                    <td>{{data.physical_activity_value}}</td>
+                    <td>{{data.physical_activity_score}}/16</td>
+                    <td>{{vm.activityRisk}}</td>
+                    </tr>
+    </tbody>
+    </table>
+</div>
+<div class="container">
+<h4><strong>Overview</strong></h4>
+The minimum recommendation for physical activity of 150 minutes a week of moderate aerobic 
+activity per week was not set arbitrarily. This, according to numerous research papers, is the 
+amount of time necessary for the body to respond to the effects of exercise in a positive way. 
+The benefits are too many to list here, but direct include: improved heart function, reduction in 
+resting heart rate, increase vascularization of muscle, enhanced ability to manage stress (and 
+its hormones), and improved cognition (mental functioning).
+</br>
+</br>
+For some individuals the idea of 150 minutes per week may be overwhelming, but once this number 
+is broken in more tangible portions it becomes something attainable and realistic for most. 
+First, these 150 minutes can be broken down into individual sessions of 30 minutes each; 
+therefore as long as it is done 5x week this guideline can be satisfied.
+</br>
+</br>
+Additionally, if 30 minutes still seems to be too much of a jump from your current routine the 
+American College of Sports Medicine (ACSM) states that the same cardiorespiratory benefits from 
+physical activity can be attained with 3 individual session of 10 minutes each (for a total of 
+30 minutes in one day). Start with small goals like 10 minutes in the morning, afternoon (after 
+lunch is ideal), and evening. As you become more habituated with exercise you can start 
+increasing the duration of your sessions.
+</br>
+</br>
+At an even broader scale, and taking into consideration a day has 1,440 minutes and a week has 
+10,080 minutes, the guidelines are only asking for a 0.015% of your time each week for physical 
+activity. So much for the “I don’t have time” excuse…
+</div>
+</br>
+</br>
+</div>
+
+<div ng-show="vm.nicotineButton">
+<div class="container">
+    <h2>Nicotine Use</h2>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.nicotineClass}}>
+                    <td><strong>Nicotine Use:</strong></td>
+                    <td>{{vm.nicotineDisplay}}</td>
+                    <td>{{data.nicotine_score}}/10</td>
+                    <td>{{vm.nicotineRisk}}</td>
+                    </tr>
+    </tbody>
+    </table>
+</div>
+<div class="container">
+<h4><strong>Overview</strong></h4>
+The risks associated from habitual use of nicotine via tobacco are well established and well 
+known. It is harmful to your health and one of the leading causes of death worldwide. Similarly, 
+the benefits of tobacco cessation are equally known and widespread. It improves all health 
+metrics both physical and psychological on both short- and long-term durations.
+</br>
+</br>
+If you are thinking about quitting smoking, the one recommendation set forth here is that you 
+don’t do it alone. There are experienced and qualified professionals that can guide you to 
+successfully complete this hard task, as well as many individuals that have in the past conquered 
+their addiction of nicotine and can offer relatable advice based on experiences. If you are 
+currently employed, contact your HR department and ask them about their EAP program and whether 
+or not it offers tobacco cessation assistance. Alternatively, visit smokefree.gov for free advice 
+and resources on how to kick cigarette to the curb.
+</div>
+</br>
+</br>
+</div>
+
+<div ng-show="vm.sleepButton">
+<div class="container">
+    <h2>Sleep</h2>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.sleepClass}}>
+                    <td><strong>Sleep (hrs/night):</strong></td>
+                    <td>{{data.sleep_value}}</td>
+                    <td>{{data.sleep_score}}/10</td>
+                    <td>{{vm.sleepRisk}}</td>
+                    </tr>
+    </tbody>
+    </table>
+</div>
+<div class="container">
+<h4><strong>Overview</strong></h4>
+Here are some tips that may help you sleep more soundly and wake up feeling more refreshed. You might want to start slowly at first. 
+Pick one thing to change, and see how that change affects your sleep. After a week or two, try to add another change. As you make changes, 
+you might want to use a sleep journal(What is a PDF document?) to figure out what things help you to sleep better and what things may get 
+in the way of a good night's sleep. Step by step, your sleep should improve. If it doesn't, talk to your doctor.
+</br>
+</br>
+<h4><strong>Nutrition</strong></h4>
+<ol>
+    <li>Limit caffeine (coffee, tea, caffeinated sodas) during the day, and don't have any for at least 4 to 6 hours before bedtime.</li>
+    <li>Do not drink alcohol late in the evening. You may fall asleep with no problems, but drinking alcohol before bed can wake you up later in the night. 
+        Otherwise, drink in moderation. Try to limit alcohol to 2 standard drinks camera.gif a day for men and 1 drink a day for women.</li>
+    <li>Avoid heavy meals close to bedtime. But a light snack may help you sleep.</li>
+    <li>Don't go to bed thirsty. But don't drink so much that you have to get up often to urinate during the night.</li>
+</ol>
+</br>
+<h4><strong>Healthy Habits to Improve Sleep</strong></h4>
+<ol>
+    <li>Go to bed at a regular bedtime every night.</li>
+    <li>Wake up at the same time each day, including weekends, even if you haven't slept well.</li>
+    <li>Get regular exercise. Don't exercise within 3 to 4 hours of bedtime, because the activity can make it hard to get to sleep.</li>
+    <li>Try to not use technology such as smartphones, computers, or tablet devices in the hours before bed. The light from these devices and the 
+        emotions that can result from checking email or social media sites can make it harder to unwind and fall asleep.</li>
+    <li>Do something relaxing before bedtime. Try deep breathing, yoga, meditation, tai chi, or muscle relaxation. 
+        Take a warm bath. Play a quiet game, or read a book.</li>
+</ol>
+</div>
+</br>
+</br>
+</div>
+
+<div ng-show="vm.bmiButton">
+<div class="container">
+    <h2>Body Mass Index (BMI)</h2>
+    <table class="table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Risk Level</th>
+                <th>Chart</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="data in vm.dataArray.list">
+                <tr class={{vm.bmiClass}}>
+                    <td><strong>Body Mass Index (BMI):</strong></td>
+                    <td>{{vm.mybmi}}</td>
+                    <td>{{vm.bmiRisk}}</td>
+                    <td><button ng-click="vm.getbmiData(vm.id)" class="btn btn-primary">Chart</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+        BMI is not part of the Wellness Score and is calculated as a result of the collected height 
+        and weight metrics within this application. BMI is not an independent risk factor of CVDs as 
+        the calculation is primarily used to aggregate population data and has limitations when 
+        applied to individual persons. BMI does not distinguish between weight associated with 
+        muscle and weight associated with fat and thus should be analyzed in combination with waist 
+        measurement which is, by itself, an independent risk factor for CVDs. There is strong 
+        evidence linking obesity to CVDs and while BMI is not the best tool for analyzing the body 
+        composition at the individual level, it does provide a way to aggregate weight against height 
+        and when combined with waist size, can indicate signs of obesity and factors contributing to metabolic 
+        syndrome. Generally, a BMI > 30 would be considered a high value and can indicate obesity. 
+        However, a moderate to high BMI, but an optimal waist size would still indicate optimal risk as 
+        waist size is the independent risk factor for CVDs.
+</div>
+</br>
+</br>
+</div>
+
+<div class="container">
+    <p><i>**This application, and any information or materials provided in connection with it, is informational only and does not constitute medical advice, care, diagnosis or treatment.
+            The Untangled Health application is not intended to be a replacement or substitution to the medical advice, care, diagnosis or treatment of a licensed medical practitioner.
+            Untangled Health recommends that you consult your physician prior to beginning any new health initiative.</i></p>
+</div>
+</br>
+</br>

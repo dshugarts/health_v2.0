@@ -1,0 +1,64 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Improving Daily Sleep</h2>
+    </div>
+    </br>
+    </br>
+
+<div class="container">
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.sleepClass}}>
+                        <td><strong>Sleep (hrs/night):</strong></td>
+                        <td>{{data.sleep_value}}</td>
+                        <td>{{data.sleep_score}}/10</td>
+                        <td>{{vm.sleepRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+        </div>
+    </br>
+</br>
+<div class="container">
+    <h4><strong>Overview</strong></h4>
+    Here are some tips that may help you sleep more soundly and wake up feeling more refreshed. You might want to start slowly at first. 
+    Pick one thing to change, and see how that change affects your sleep. After a week or two, try to add another change. As you make changes, 
+    you might want to use a sleep journal(What is a PDF document?) to figure out what things help you to sleep better and what things may get 
+    in the way of a good night's sleep. Step by step, your sleep should improve. If it doesn't, talk to your doctor.
+</br>
+</br>
+    <h4><strong>Nutrition</strong></h4>
+    <ol>
+        <li>Limit caffeine (coffee, tea, caffeinated sodas) during the day, and don't have any for at least 4 to 6 hours before bedtime.</li>
+        <li>Do not drink alcohol late in the evening. You may fall asleep with no problems, but drinking alcohol before bed can wake you up later in the night. 
+            Otherwise, drink in moderation. Try to limit alcohol to 2 standard drinks camera.gif a day for men and 1 drink a day for women.</li>
+        <li>Avoid heavy meals close to bedtime. But a light snack may help you sleep.</li>
+        <li>Don't go to bed thirsty. But don't drink so much that you have to get up often to urinate during the night.</li>
+    </ol>
+</br>
+    <h4><strong>Healthy Habits to Improve Sleep</strong></h4>
+    <ol>
+        <li>Go to bed at a regular bedtime every night.</li>
+        <li>Wake up at the same time each day, including weekends, even if you haven't slept well.</li>
+        <li>Get regular exercise. Don't exercise within 3 to 4 hours of bedtime, because the activity can make it hard to get to sleep.</li>
+        <li>Try to not use technology such as smartphones, computers, or tablet devices in the hours before bed. The light from these devices and the 
+            emotions that can result from checking email or social media sites can make it harder to unwind and fall asleep.</li>
+        <li>Do something relaxing before bedtime. Try deep breathing, yoga, meditation, tai chi, or muscle relaxation. 
+            Take a warm bath. Play a quiet game, or read a book.</li>
+    </ol>
+</div>
+</br>
+</br>
+<div class="container">
+    <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+</div>
+</br>
+</br>

@@ -1,0 +1,49 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Age Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.ageClass}}>
+                        <td><strong>Age:</strong></td>
+                        <td>{{data.age_value}}</td>
+                        <td>{{data.age_score}}/5</td>
+                        <td>{{vm.ageRisk}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        The National Institute of Health (NIH) has established that age is an independent risk factor 
+        for the development of cardiovascular diseases (CVD). In others words, despite the presence 
+        (or absence) of other risk factors age contributes to an increase in risk for developing some 
+        form of heart disease.
+    </br>
+    </br>
+        It is of importance to note that risk for CVD development and life expectancy are not be used 
+        as synonyms. Evidence suggests that in the absence of other risk factors longevity is significantly 
+        increased.
+    </br>
+    </br>
+        In conclusion, even though one can not stop the chronological declines observed in human 
+        physiology one can attenuate its impacts by having physically active, nutritionally balanced, 
+        and stress-coping habits.
+    </div>
+    </br>
+    <div class="container">
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3297980/" target="_blank">Learn More!</a>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+        </div>

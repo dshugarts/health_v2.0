@@ -1,0 +1,133 @@
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+  <h2>Update Last Data Entry</h2>
+<form class="col-md-12" id="dataForm" ng-repeat="data in vm.dataArray">
+  <div class="form-group col-md-6">
+    <label for="height">Height (in.):</label>
+    <div ng-hide="data.editing" name="height" class="">
+        {{data.height_value}}
+    </div>
+        <input ng-show="data.editing" type="text" name="height" class="form-control" ng-model="data.height_value" placeholder="Height (in.)"/>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="weight">Weight (lbs.):</label>
+        <div ng-hide="data.editing" name="weight" class="">
+          {{data.weight_value}}
+        </div>
+          <input ng-show="data.editing" type="text" name="weight" class="form-control" ng-model="data.weight_value" placeholder="Weight (lbs.)"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="age">Age:</label>
+        <div ng-hide="data.editing" name="age" class="">
+          {{data.age_value}}
+        </div>
+          <input ng-show="data.editing" type="text" name="age" class="form-control" ng-model="data.age_value" placeholder="Age"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="waist">Waist Size (in.):</label>
+        <div ng-hide="data.editing" name="waist" class="">
+            {{data.waist_value}}
+        </div>
+          <input ng-show="data.editing" type="text" name="waist" class="form-control" ng-model="data.waist_value" placeholder="Waist Size (in.)"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="systolic">Systolic Pressure:</label>
+        <div ng-hide="data.editing" name="systolic" class="">
+            {{data.systolic_value}}
+        </div>
+          <input ng-show="data.editing" type="text" name="systolic" class="form-control" ng-model="data.systolic_value" placeholder="Systolic Pressure"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="diastolic">Diastolic Pressure:</label>
+        <div ng-hide="data.editing" name="diastolic" class="">
+            {{data.diastolic_value}}
+        </div>
+          <input ng-show="data.editing" type="text" name="diastolic" class="form-control" ng-model="data.diastolic_value" placeholder="Diastolic Pressure"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="hdl">HDL:</label>
+        <div ng-hide="data.editing" name="hdl" class="">
+              {{data.hdl_value}}
+        </div>
+            <input ng-show="data.editing" type="text" name="hdl" class="form-control" ng-model="data.hdl_value" placeholder="HDL"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="ldl">LDL:</label>
+        <div ng-hide="data.editing" name="ldl" class="">
+              {{data.ldl_value}}
+        </div>
+            <input ng-show="data.editing" type="text" name="ldl" class="form-control" ng-model="data.ldl_value" placeholder="LDL"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="glu">Fasting Glucose:</label>
+        <div ng-hide="data.editing" name="glu" class="">
+              {{data.glu_value}}
+        </div>
+            <input ng-show="data.editing" type="text" name="glu" class="form-control" ng-model="data.glu_value" placeholder="Fasting Glucose"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="trg">Triglycerides:</label>
+        <div ng-hide="data.editing" name="trg" class="">
+              {{data.trg_value}}
+        </div>
+            <input ng-show="data.editing" type="text" name="trg" class="form-control" ng-model="data.trg_value" placeholder="Triglycerides"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="activity">Moderate Physical Activity (min/week):</label>
+        <div ng-hide="data.editing" name="activity" class="">
+              {{data.physical_activity_value}}
+        </div>
+            <input ng-show="data.editing" type="text" name="activity" class="form-control" ng-model="data.physical_activity_value" placeholder="Moderate Physical Activity (min/week)"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="sleep">Sleep (hrs/night):</label>
+        <div ng-hide="data.editing" name="sleep" class="">
+              {{data.sleep_value}}
+        </div>
+            <input ng-show="data.editing" type="text" name="sleep" class="form-control" ng-model="data.sleep_value" placeholder="Hours of Sleep (hrs/night)"/>
+        </div>
+    <div class="form-group col-md-3">
+        <label>Nicotine Use?:</label>
+        <div ng-hide="data.editing" name="nicotine" class="">
+              {{vm.newNicotine}}
+        </div>
+        <div ng-show="data.editing">
+        <label class="radio-inline" for="nicotine">
+        <input type="radio" name="nicotine" ng-model="vm.newNicotine" value="false">No</label>
+        <label class="radio-inline" for="nicotine">
+        <input type="radio" name="nicotine" ng-model="vm.newNicotine" value="true">Yes</label>
+        </div>
+        </div>
+    <div class="form-group col-md-3">
+        <label>Gender:</label>
+        <div ng-hide="data.editing" name="gender" class="">
+              {{data.gender}}
+        </div>
+        <div ng-show="data.editing">
+        <label class="radio-inline" for="gender">
+        <input type="radio" name="gender" ng-model="data.gender" value="F">F</label>
+        <label class="radio-inline" for="gender">
+        <input type="radio" name="gender" ng-model="data.gender" value="M">M</label>
+        </div>
+        </div>
+    <div class="form-group col-md-3">
+        <label>Was your father diagnosed with Heart Disease before age 55 and/or mother before age 65?:</label>
+        <div ng-hide="data.editing" name="history" class="">
+              {{vm.newHistory}}
+        </div>
+        <div ng-show="data.editing">
+        <label class="radio-inline" for="history">
+        <input type="radio" name="history" ng-model="vm.newHistory" value="false">No</label>
+        <label class="radio-inline" for="history">
+        <input type="radio" name="history" ng-model="vm.newHistory" value="true">Yes</label>
+        </div>
+        </div>
+
+  <div class="form-group col-md-8">
+    <button ng-hide="data.editing" ng-click="vm.editData(data)" class="btn btn-primary">Update Data</button>
+    <button ng-show="data.editing" ng-click="vm.saveData(data, vm.newNicotine, vm.newHistory)" class="btn btn-success">Save Data</button>
+    <button ng-hide="data.editing" ng-click="vm.dataView()" class="btn btn-warning">Back</button>
+    <button ng-show="data.editing" ng-click="vm.cancelUpdate(data)" class="btn btn-danger">Cancel Update</button>
+  </div>
+  </form>
+</div>

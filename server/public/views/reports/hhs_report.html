@@ -1,0 +1,39 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>My Wellness Score Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Maximum Wellness Points</th>
+                    <th>Risk Level</th>
+                    <th>Chart</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.wellClass}}>
+                        <td><strong>Wellness Score:</strong></td>
+                        <td>{{data.well_score}}</td>
+                        <td>100</td>
+                        <td>{{vm.wellRisk}}</td>
+                        <td><button ng-click="vm.getHeartHealthData(vm.id)" class="btn btn-primary">Chart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        {{vm.hhsReport}}
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qeHKZyK4f_Y?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+        </div>

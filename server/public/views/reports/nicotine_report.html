@@ -1,0 +1,48 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Nicotine Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.nicotineClass}}>
+                        <td><strong>Nicotine Use:</strong></td>
+                        <td>{{vm.nicotineDisplay}}</td>
+                        <td>{{data.nicotine_score}}/10</td>
+                        <td>{{vm.nicotineRisk}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        Chronic smokers have a 50% survival rate; meaning, half of all habitual smokers are at risk 
+        of mortality from a disease created by the continual act of cigarette and cigar smoking 
+        (World Health Organization, WHO).
+    </br>
+</br>  
+        The metabolic and physiological damage created by tobacco use is vast and well document in 
+        the literature, it includes (but is not limited to): leading cause of lung and mouth cancer, 
+        Chronic Obstructive Pulmonary Disorders (COPD) diagnosis, cardiovascular disease (CVD), and 
+        type II diabetes. Not surprisingly it wins the prize of the world’s number 1 killer according 
+        to the WHO.
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/fTIwVjVSmjg?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+     </div>
+</br>
+</br>

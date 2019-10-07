@@ -1,0 +1,47 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>ACSM Risk Assessment</h2>
+    </div>
+    </br>
+    </br>
+
+<div class="container">
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.acsmClass}}>
+                        <td><strong>ACSM Risk Questions:</strong></td>
+                        <td>{{data.acsm_value}}</td>
+                        <td>{{data.acsm_score}}/10</td>
+                        <td>{{vm.acsmRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+        </div>
+    </br>
+</br>
+<div class="container">
+    <h4><strong>Overview</strong></h4>
+    The American College of Sports Medicine (ACSM) provides a research-based approach to the 
+    prevention of cardiac events at the onset of physical activity.
+</br>
+</br>
+    The questions provided in our screening process represent those that are suggestive of 
+    cardiovascular diseases that have perhaps never been diagnosed in the past. If you 
+    answered yes to any of the questions above, please seek out clearance from your physician 
+    prior to starting any new exercise program.
+</div>
+</br>
+</br>
+<div class="container">
+    <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+</div>
+</br>
+</br>

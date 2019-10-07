@@ -1,0 +1,45 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>ACSM Risk Questionnaire</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.acsmClass}}>
+                        <td><strong>ACSM Risk Questions:</strong></td>
+                        <td>{{data.acsm_value}}</td>
+                        <td>{{data.acsm_score}}/10</td>
+                        <td>{{vm.acsmRisk}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        The American College of Sports Medicine provides a research-based approach to the prevention 
+        of cardiac events at the onset of physical activity. Over the years the panel has come to a 
+        consensus that those at higher risk for a cardiac event with exercise are those with present 
+        signs and symptoms of cardiovascular disease (CVD, not diagnosed) and those diagnosed with a 
+        CVD seeking new (higher) intensities of exercise. It is recommended that these individual 
+        seek medical clearance prior to starting a new physical activity regimen.
+    </br>
+</br>
+        The questions provided in our screening process represent those that are suggestive of CVD 
+        that have perhaps never been diagnosed in the past. If you answered yes to any of the 
+        questions above, please seek out clearance from your physician prior to starting any new 
+        exercise program. If you have a diagnosed CVD, metabolic disease (such as diabetes), and/or 
+        kidneys disease and are seeking an unaccustomed level of physical activity, please also refer 
+        to your physician prior to starting. 
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+        </div>

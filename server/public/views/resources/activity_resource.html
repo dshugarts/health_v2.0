@@ -1,0 +1,64 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Improving Weekly Physical Activity</h2>
+    </div>
+    </br>
+    </br>
+
+<div class="container">
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.activityClass}}>
+                        <td><strong>Physical Activity (min/week):</strong></td>
+                        <td>{{data.physical_activity_value}}</td>
+                        <td>{{data.physical_activity_score}}/16</td>
+                        <td>{{vm.activityRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+        </div>
+    </br>
+</br>
+<div class="container">
+    <h4><strong>Overview</strong></h4>
+    The minimum recommendation for physical activity of 150 minutes a week of moderate aerobic 
+    activity per week was not set arbitrarily. This, according to numerous research papers, is the 
+    amount of time necessary for the body to respond to the effects of exercise in a positive way. 
+    The benefits are too many to list here, but direct include: improved heart function, reduction in 
+    resting heart rate, increase vascularization of muscle, enhanced ability to manage stress (and 
+    its hormones), and improved cognition (mental functioning).
+</br>
+</br>
+    For some individuals the idea of 150 minutes per week may be overwhelming, but once this number 
+    is broken in more tangible portions it becomes something attainable and realistic for most. 
+    First, these 150 minutes can be broken down into individual sessions of 30 minutes each; 
+    therefore as long as it is done 5x week this guideline can be satisfied.
+</br>
+</br>
+    Additionally, if 30 minutes still seems to be too much of a jump from your current routine the 
+    American College of Sports Medicine (ACSM) states that the same cardiorespiratory benefits from 
+    physical activity can be attained with 3 individual session of 10 minutes each (for a total of 
+    30 minutes in one day). Start with small goals like 10 minutes in the morning, afternoon (after 
+    lunch is ideal), and evening. As you become more habituated with exercise you can start 
+    increasing the duration of your sessions.
+</br>
+</br>
+    At an even broader scale, and taking into consideration a day has 1,440 minutes and a week has 
+    10,080 minutes, the guidelines are only asking for a 0.015% of your time each week for physical 
+    activity. So much for the “I don’t have time” excuse…
+</div>
+</br>
+</br>
+<div class="container">
+    <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+</div>
+</br>
+</br>

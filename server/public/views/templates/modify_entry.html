@@ -1,0 +1,188 @@
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+  <h2>Update Last Data Entry</h2>
+<form class="col-md-12" ng-repeat="data in vm.dataArray.list">
+  <div class="form-group col-md-6">
+    <label for="height">Height (in.):</label>
+    <div ng-hide="data.editing" name="height" class="">
+        {{data.height_value}}
+    </div>
+        <input ng-show="data.editing" type="text" name="height" class="form-control" ng-model="data.height_value" placeholder="Height (in.)"/>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="weight">Weight (lbs.):</label>
+        <div ng-hide="data.editing" name="weight" class="">
+          {{data.weight_value}}
+        </div>
+          <input ng-show="data.editing" type="text" name="weight" class="form-control" ng-model="data.weight_value" placeholder="Weight (lbs.)"/>
+        </div>
+    </form>
+    <form class="col-md-12" ng-repeat="data in vm.dataArray.list">
+    <div class="form-group col-md-6">
+        <label for="age">Age:</label>
+        <div ng-hide="data.editing" name="age" class="">
+          {{data.age_value}}
+        </div>
+          <input ng-show="data.editing" type="text" name="age" class="form-control" ng-model="data.age_value" placeholder="Age"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="waist">Waist Size (in.):</label>
+        <div ng-hide="data.editing" name="waist" class="">
+            {{data.waist_value}}
+        </div>
+          <input ng-show="data.editing" type="text" name="waist" class="form-control" ng-model="data.waist_value" placeholder="Waist Size (in.)"/>
+        </div>
+    </form>
+    <form class="col-md-12" ng-repeat="data in vm.dataArray.list">
+    <div class="form-group col-md-6">
+        <label for="systolic">Systolic Pressure:</label>
+        <div ng-hide="data.editing" name="systolic" class="">
+            {{data.systolic_value}}
+        </div>
+          <input ng-show="data.editing" type="text" name="systolic" class="form-control" ng-model="data.systolic_value" placeholder="Systolic Pressure"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label for="diastolic">Diastolic Pressure:</label>
+        <div ng-hide="data.editing" name="diastolic" class="">
+            {{data.diastolic_value}}
+        </div>
+          <input ng-show="data.editing" type="text" name="diastolic" class="form-control" ng-model="data.diastolic_value" placeholder="Diastolic Pressure"/>
+        </div>
+    </form>
+    <form class="col-md-12" ng-repeat="data in vm.dataArray.list">
+    <div class="form-group col-md-6">
+        <label for="activity">Moderate Physical Activity (min/week):</label>
+        <div ng-hide="data.editing" name="activity" class="">
+                {{data.physical_activity_value}}
+        </div>
+            <input ng-show="data.editing" type="text" name="activity" class="form-control" ng-model="data.physical_activity_value" placeholder="Moderate Physical Activity (min/week)"/>
+        </div>    
+    <div class="form-group col-md-6">
+        <label for="inactivity">Physical Inactivity (min):</label>
+    </br>
+        <i>On a typical day, and on average, how many consecutive minutes you spend sitting without getting up?</i>
+</br>
+</br>
+        <div ng-hide="data.editing" name="inactivity" class="">
+                {{data.inactivity_value}}
+        </div>
+            <input ng-show="data.editing" type="text" name="inactivity" class="form-control" ng-model="data.inactivity_value" placeholder="Physical Inactivity (consecutive min.)"/>
+        </div>
+    </form>
+    <form class="col-md-12" ng-repeat="data in vm.dataArray.list">
+    <div class="form-group col-md-6">
+        <label for="sleep">Sleep (hrs/night):</label>
+        <div ng-hide="data.editing" name="sleep" class="">
+                {{data.sleep_value}}
+        </div>
+            <input ng-show="data.editing" type="text" name="sleep" class="form-control" ng-model="data.sleep_value" placeholder="Hours of Sleep (hrs/night)"/>
+        </div>
+    <div class="form-group col-md-6">
+        <label>ACSM Risk Questions:</label>
+        <div ng-hide="data.editing" name="acsm" class="">
+                  {{data.acsm_value}}
+            </div>
+            <div ng-show="data.editing">
+            <div class="radio" for="acsm">
+            <label><input type="radio" name="acsm" ng-model="data.acsm_value" value="No">No</label>
+            </div>
+            <div class="radio" for="acsm">
+            <label><input type="radio" name="acsm" ng-model="data.acsm_value" value="Yes">Yes</label>
+            </div>
+            </div>
+            </div>
+        </form>
+        <form class="col-md-12" ng-repeat="data in vm.dataArray.list">
+    <div class="form-group col-md-6">
+        <label>What would you rate your current level of stress in the past 14 days?</label>
+    </br>
+        <i>(0= no stress at all, 1 = low, 2 = moderate, 3 = moderate-high, 4 = high, 5 = extremely stressful)</i>
+    </br>
+</br>
+            <div ng-hide="data.editing" name="total_stress" class="">
+                {{vm.newStress}}
+            </div>
+            <div ng-show="data.editing">
+            <div class="radio" for="total_stress">
+            <label><input type="radio" name="total_stress" ng-model="vm.newStress" value="false">0-2</label>
+            </div>
+            <div class="radio" for="total_stress">
+            <label><input type="radio" name="total_stress" ng-model="vm.newStress" value="true">3-5</label>
+            </div>
+            </div>
+            </div>
+    <div class="form-group col-md-6">
+        <label>Bases on your answer about stress, how would you rate your current ability to manage it in the past 14 days?</label>
+    </br>
+        <i>(0 = I have no control of it, 1 = I constantly feel I “take 2 steps forward and take 3 steps back”, 2 = I don’t know how to manage it, 3 = I have difficulties managing it, 4 = I have a good handle on it, 5 = I have no issues managing it)</i>
+        </br>
+    </br>
+            <div ng-hide="data.editing" name="stress_management" class="">
+                {{data.stress_management_value}}
+            </div>
+            <div ng-show="data.editing">
+            <div class="radio" for="stress_management">
+            <label><input type="radio" name="stress_management" ng-model="data.stress_management_value" value="5">4-5</label>
+            </div>
+            <div class="radio" for="stress_management">
+            <label><input type="radio" name="stress_management" ng-model="data.stress_management_value" value="3">3</label>
+            </div>
+            <div class="radio" for="stress_management">
+            <label><input type="radio" name="stress_management" ng-model="data.stress_management_value" value="0">0-2</label>
+            </div>
+            </div>
+            </div>
+        </form>
+        <form class="col-md-12" ng-repeat="data in vm.dataArray.list">
+    <div class="form-group col-md-3">
+        <label>Nicotine Use?:</label>
+        <div ng-hide="data.editing" name="nicotine" class="">
+              {{vm.newNicotine}}
+        </div>
+        <div ng-show="data.editing">
+        <div class="radio" for="nicotine">
+        <label><input type="radio" name="nicotine" ng-model="vm.newNicotine" value="false">No</label>
+        </div>
+        <div class="radio" for="nicotine">
+        <label><input type="radio" name="nicotine" ng-model="vm.newNicotine" value="true">Yes</label>
+        </div>
+        </div>
+        </div>
+    <div class="form-group col-md-3">
+        <label>Gender:</label>
+        <div ng-hide="data.editing" name="gender" class="">
+              {{data.gender}}
+        </div>
+        <div ng-show="data.editing">
+        <div class="radio" for="gender">
+        <label><input type="radio" name="gender" ng-model="data.gender" value="F">F</label>
+        </div>
+        <div class="radio" for="gender">
+        <label><input type="radio" name="gender" ng-model="data.gender" value="M">M</label>
+        </div>
+        </div>
+        </div>
+    <div class="form-group col-md-3">
+        <label>Was your father diagnosed with Heart Disease before age 55 and/or mother before age 65?:</label>
+        <div ng-hide="data.editing" name="history" class="">
+              {{vm.newHistory}}
+        </div>
+        <div ng-show="data.editing">
+        <label class="radio-inline" for="history">
+        <input type="radio" name="history" ng-model="vm.newHistory" value="false">No</label>
+        <label class="radio-inline" for="history">
+        <input type="radio" name="history" ng-model="vm.newHistory" value="true">Yes</label>
+        </div>
+        </div>
+    </form>
+    <form class="col-md-12" ng-repeat="data in vm.dataArray.list">
+  <div class="form-group col-md-8">
+    <button ng-hide="data.editing" ng-click="vm.editData(data)" class="btn btn-primary">Update Data</button>
+    <button ng-show="data.editing" ng-click="vm.saveData(data, vm.newNicotine, vm.newHistory, vm.newStress)" class="btn btn-success">Save Data</button>
+    <button ng-hide="data.editing" ng-click="vm.reportView()" class="btn btn-warning">Back</button>
+    <button ng-show="data.editing" ng-click="vm.cancelUpdate(data)" class="btn btn-danger">Cancel Update</button>
+  </div>
+  </form>
+</div>
+</br>
+</br>

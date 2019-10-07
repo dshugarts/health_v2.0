@@ -1,0 +1,37 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>My Triglycerides Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Risk Level</th>
+                    <th>Chart</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray">
+                    <tr class={{vm.trgClass}}>
+                        <td><strong>Triglycerides:</strong></td>
+                        <td>{{data.trg_value}}</td>
+                        <td>{{vm.trgRisk}}</td>
+                        <td><button ng-click="vm.getTrgData(vm.id)" class="btn btn-primary">Chart</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        {{vm.trgReport}}
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+        </div>

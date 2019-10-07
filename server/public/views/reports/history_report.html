@@ -1,0 +1,51 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Family History Report</h2>
+    </br>
+    </br>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Points Earned</th>
+                    <th>Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="data in vm.dataArray.list">
+                    <tr class={{vm.historyClass}}>
+                        <td><strong>Family History of CVDs:</strong></td>
+                        <td>{{vm.historyDisplay}}</td>
+                        <td>{{data.family_history_score}}/5</td>
+                        <td>{{vm.historyRisk}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        In a recent study published by the College of Family Physicians of Canada, evidence for 
+        development of cardiovascular diseases (CVD) based on family history is strong in the following 
+        circumstances. The offspring of parents with premature CVD have a 60% to 75% risk increase for 
+        CVD development. Additionally, siblings of patients with CVD have about a 40% risk increase.
+</br>
+</br>
+    These findings are in agreement in numerous previous studies demonstrating similar strengths in 
+    this relationship between CVD and family history. The Centers for Disease Control and Prevention 
+    (CDC) provides in its website similar information pertaining to this topic.
+</br>
+</br>
+    Important to note that although family history, and hence the genes received for your parents, 
+    are not modifiable it does not establish certainty of disease development. Habitual acts of 
+    physical activity, proper nutrition, and stress management are key in moderating genes and 
+    preventing likelihood of disease development.
+</br>
+</br>
+    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4229162/" target="_blank">Learn More! (NIH)</a>
+</br>
+    <a href="https://www.cdc.gov/heartdisease/family_history.htm" target="_blank">Learn More! (CDC)</a>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+            <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+     </div>

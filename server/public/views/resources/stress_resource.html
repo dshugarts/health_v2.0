@@ -1,0 +1,94 @@
+<div class="ng-cloak" ng-include="'views/partials/nav.html'"></div>
+<div class="container">
+        <h2>Improving Stress</h2>
+    </div>
+    </br>
+    </br>
+
+<div class="container">
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Points Earned</th>
+                        <th>Risk Level</th>
+                      </tr>
+                    </thead>
+                    <tbody ng-repeat="data in vm.dataArray.list">
+                        <tr class={{vm.stressClass}}>
+                        <td><strong>Total Stress:</strong></td>
+                        <td>{{vm.stressDisplay}}</td>
+                        <td>{{data.stress_score}}/10</td>
+                        <td>{{vm.stressRisk}}</td>
+                        </tr>
+        </tbody>
+        </table>
+        </div>
+    </br>
+</br>
+<div class="container">
+    <h4><strong>Overview</strong></h4>
+    Evolutionary speaking, stress is a natural human response to life-threatening situations. As the 
+    human species evolved, and with it the commodities of modern life, we have stopped concerning 
+    ourselves with lions and tigers, and have replaced the stress responses towards more constant 
+    threats, such as job responsibilities, financial obligation, timely commutes, etc. In fact, 
+    according to the American Psychological Association the three major causes of stress in the U.S. 
+    today are money, work and family responsibilities, with 67%, 65% and 54% of Americans reporting 
+    experiencing major feelings of stress in those categories, respectively. 
+</br>
+</br>
+    A College Student Health Survey conducted in Minnesota by Boynton Health showed that the amount 
+    of stress student have may have less devastating impacts to one’s health if they are well suited 
+    to appropriately cope with them. In other words, it may of higher value to learn to cope with 
+    current stressors rather than trying to eliminate or (even worse) neglect their existence. 
+    Moreover, it may be that these same findings extend outside the confines of campuses and are true 
+    for working adults as well.
+</br>
+</br>
+    In order to better cope with stress it is first essential that its sources can be identified. 
+    Once identified, one must be able to determine his/her locust of control over it; can it be 
+    controllable? Here is an example, and a practical exercise you can employ:
+</br>
+</br>
+    <i>“You are about to fall asleep when you remember that you forgot to send an important work 
+    document to your boss. You toss and turn thinking about what will happen, you can even get up and 
+    send a panicked-hurried email to your boss to alleviate the situation. However, before you do all 
+    of the above think about the following questions: will sending this email, right now, change 
+    anything? Even if you do send the email at this time, will the recipient even see it?</i>
+</br>
+</br>
+    <i>You may feel better about sending the email, but in reality, the boss will not even see it until 
+    the start of the workday. Or, even worse, let’s say that they do see it! Now you have stressed 
+    your boss at a late time of the night; think they will be happier to see the email before they 
+    went to bed? Or in the morning, when they should actually be at work?”</i>
+</br>
+</br>
+    The example above can be used to many situations, banks for example do not complete transfers at 
+    night (bills paid at midnight won’t be posted until the next day’s work hours). The point here 
+    being that the past cannot be changed, no matter how hard you think of it; and the actions taken 
+    at the present moment may not always fix the problem. Now, if the answers to the questions is 
+    that your actions will change things, then go ahead, pull up those sleeves and get it done! If 
+    not, you are creating a life-threatening situation in your brain, and the body will respond 
+    accordingly.   
+</br>
+</br>
+    Controlling stress is about recognizing your role in engaging with the stress response in the 
+    first place. Additionally, try to find activities that you enjoy doing outside of work and other 
+    obligations. If you are feeling stressed and down, typically people ask “what is the matter with 
+    me”. Better yet, is asking your yourself “what matters to me”? This simple reframing can put 
+    things into perspective of where to better focus your energy and efforts.   
+</br>
+</br>
+    In a nutshell, there are many things one can do to control stress, but to say that there is one 
+    single solution to combat stress is fictional. Stress, and its subsequent control, is highly 
+    individual. Identify the sources of your stress, label your efforts and actions against realistic 
+    outcomes, and choose to address the things that are high on your “this matter to me” list.
+</div>
+</br>
+</br>
+<div class="container">
+        <button class="btn btn-primary" ng-click="vm.reportPage()">Return to Report</button>
+    </div>
+</br>
+</br>

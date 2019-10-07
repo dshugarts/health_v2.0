@@ -1,0 +1,13 @@
+<div class="navbar">
+  <div class="container">
+    <ul>
+      <li><a href="#!dashboard">My Dashboard</a></li>
+      <li><a href="#!report">My Detailed Report</a></li>
+      <li><a href="#!info">About</a></li>
+      <div class="welcome">
+      <li>Welcome, {{vm.userObject.userName}}</li>
+      <button id="logout" class="btn btn-default" ng-click="vm.userService.logout()">Log Out</button>
+      </div>
+    </ul>
+  </div>
+</div>
