@@ -2,6 +2,7 @@ myApp.service('ScoringService', ['$http', '$location', 'UserService', function($
        console.log('ScoringService Loaded');
        var self = this;
        self.newEntry = {};
+       id = UserService.userObject.id;
        self.entryObject = {list: []};
        self.dataArray = {
         list: []
@@ -26,7 +27,7 @@ myApp.service('ScoringService', ['$http', '$location', 'UserService', function($
     } // end toMiddle
 
        self.postEntry = function(entry) {
-        console.log("postENTRY = ", entry);
+        console.log("postENTR Y = ", entry);
           $http({
               method: 'POST',
               url: '/scoring',
@@ -223,48 +224,48 @@ myApp.service('ScoringService', ['$http', '$location', 'UserService', function($
              console.log('ALL JOIN DATA ', self.allReportDataArray);
    
              if (data[0].age_score === 5) {
-                 self.ageReport = self.allReportDataArray[0].category_description;
+              //   self.ageReport = self.allReportDataArray[0].category_description;
                  self.ageRisk = 'Low Risk Value';
                  self.ageClass = 'bg-success';
                  self.ageShow = 0;
              } else if (data[0].age_score === 0) {
-                 self.ageReport = self.allReportDataArray[1].category_description;
+               //  self.ageReport = self.allReportDataArray[1].category_description;
                  self.ageRisk = 'High Risk Value';
                  self.ageClass = 'bg-danger';
                  self.ageShow = 1;
              }
    
              if (data[0].bp_score === 12) {
-                 self.bpReport = self.allReportDataArray[2].category_description;
+              //   self.bpReport = self.allReportDataArray[2].category_description;
                  self.bpRisk = 'Low Risk Value';
                  self.bpClass = 'bg-success';
                  self.bpShow = 0;
              } else if (data[0].bp_score < 12 && data[0].bp_score > 0) {
-                 self.bpReport = self.allReportDataArray[3].category_description;
+              //   self.bpReport = self.allReportDataArray[3].category_description;
                  self.bpRisk = 'Moderate Risk Value';
                  self.bpClass = 'bg-warning';
                  self.bpShow = 1;
              } else if (data[0].bp_score === 0) {
-                 self.bpReport = self.allReportDataArray[4].category_description;
+               //  self.bpReport = self.allReportDataArray[4].category_description;
                  self.bpRisk = 'High Risk Value';
                  self.bpClass = 'bg-danger';
                  self.bpShow = 1;
              }
    
              if (data[0].stress_score === 10) {
-               self.stressReport = self.allReportDataArray[5].category_description;
+             //  self.stressReport = self.allReportDataArray[5].category_description;
                self.stressRisk = 'Low Risk Value';
                self.stressDisplay = 'Low Stress';
                self.stressClass = 'bg-success';
                self.stressShow = 0;
            } else if (data[0].stress_score < 10 && data[0].stress_score > 0) {
-               self.stressReport = self.allReportDataArray[6].category_description;
+             //  self.stressReport = self.allReportDataArray[6].category_description;
                self.stressRisk = 'Moderate Risk Value';
                self.stressDisplay = 'Moderate Stress';
                self.stressClass = 'bg-warning';
                self.stressShow = 1;
            } else if (data[0].stress_score === 0) {
-               self.stressReport = self.allReportDataArray[7].category_description;
+           //    self.stressReport = self.allReportDataArray[7].category_description;
                self.stressRisk = 'High Risk Value';
                self.stressDisplay = 'High Stress';
                self.stressClass = 'bg-danger';
@@ -272,59 +273,59 @@ myApp.service('ScoringService', ['$http', '$location', 'UserService', function($
            }
    
            if (data[0].inactivity_score === 12) {
-               self.inactivityReport = self.allReportDataArray[8].category_description;
+             //  self.inactivityReport = self.allReportDataArray[8].category_description;
                self.inactivityRisk = 'Low Risk Value';
                self.inactivityClass = 'bg-success';
                self.inactivityShow = 0;
            } else if (data[0].inactivity_score < 12 && data[0].inactivity_score > 0) {
-               self.inactivityReport = self.allReportDataArray[9].category_description;
+            //   self.inactivityReport = self.allReportDataArray[9].category_description;
                self.inactivityRisk = 'Moderate Risk Value';
                self.inactivityClass = 'bg-warning';
                self.inactivityShow = 1;
            } else if (data[0].inactivity_score === 0) {
-               self.inactivityReport = self.allReportDataArray[10].category_description;
+            //   self.inactivityReport = self.allReportDataArray[10].category_description;
                self.inactivityRisk = 'High Risk Value';
                self.inactivityClass = 'bg-danger';
                self.inactivityShow = 1;
            }
    
            if (data[0].acsm_score === 10) {
-               self.acsmReport = self.allReportDataArray[11].category_description;
+            //   self.acsmReport = self.allReportDataArray[11].category_description;
                self.acsmRisk = 'Low Risk Value';
                self.acsmClass = 'bg-success';
                self.acsmShow = 0;
            } else if (data[0].acsm_score === 0) {
-               self.acsmReport = self.allReportDataArray[13].category_description;
+            //   self.acsmReport = self.allReportDataArray[13].category_description;
                self.acsmRisk = 'High Risk Value';
                self.acsmClass = 'bg-danger';
                self.acsmShow = 1;
            }
    
            if (data[0].waist_score === 10) {
-               self.waistReport = self.allReportDataArray[14].category_description;
+            //   self.waistReport = self.allReportDataArray[14].category_description;
                self.waistRisk = 'Low Risk Value';
                self.waistClass = 'bg-success';
                self.waistShow = 0;
            } else if (data[0].waist_score < 10 && data[0].waist_score > 0) {
-            self.waistReport = self.allReportDataArray[15].category_description;
+         //   self.waistReport = self.allReportDataArray[15].category_description;
             self.waistRisk = 'Moderate Risk Value';
             self.waistClass = 'bg-warning';
             self.waistShow = 1;
         } else if (data[0].waist_score === 0) {
-               self.waistReport = self.allReportDataArray[15].category_description;
+           //    self.waistReport = self.allReportDataArray[15].category_description;
                self.waistRisk = 'High Risk Value';
                self.waistClass = 'bg-danger';
                self.waistShow = 1;
            }
    
            if (data[0].family_history_score === 5) {
-               self.historyReport = self.allReportDataArray[16].category_description;
+            //   self.historyReport = self.allReportDataArray[16].category_description;
                self.historyRisk = 'Low Risk Value';
                self.historyDisplay = 'No';
                self.historyClass = 'bg-success';
                self.historyShow = 0;
            } else if (data[0].family_history_score === 0) {
-               self.historyReport = self.allReportDataArray[17].category_description;
+            //   self.historyReport = self.allReportDataArray[17].category_description;
                self.historyRisk = 'High Risk Value';
                self.historyDisplay = 'Yes';
                self.historyClass = 'bg-danger';
@@ -332,30 +333,30 @@ myApp.service('ScoringService', ['$http', '$location', 'UserService', function($
            }
    
            if (data[0].physical_activity_score > 11) {
-               self.activityReport = self.allReportDataArray[18].category_description;
+            //   self.activityReport = self.allReportDataArray[18].category_description;
                self.activityRisk = 'Low Risk Value';
                self.activityClass = 'bg-success';
                self.activityShow = 0;
            } else if (data[0].physical_activity_score < 12 && data[0].physical_activity_score > 0) {
-            self.activityReport = self.allReportDataArray[19].category_description;
+        //    self.activityReport = self.allReportDataArray[19].category_description;
             self.activityRisk = 'Moderate Risk Value';
             self.activityClass = 'bg-warning';
             self.activityShow = 1;
         } else if (data[0].physical_activity_score === 0) {
-               self.activityReport = self.allReportDataArray[19].category_description;
+         //      self.activityReport = self.allReportDataArray[19].category_description;
                self.activityRisk = 'High Risk Value';
                self.activityClass = 'bg-danger';
                self.activityShow = 1;
            }
    
            if (data[0].nicotine_score === 10) {
-               self.nicotineReport = self.allReportDataArray[20].category_description;
+           //    self.nicotineReport = self.allReportDataArray[20].category_description;
                self.nicotineRisk = 'Low Risk Value';
                self.nicotineDisplay = 'No';
                self.nicotineClass = 'bg-success';
                self.nicotineShow = 0;
            } else if (data[0].nicotine_score === 0) {
-               self.nicotineReport = self.allReportDataArray[21].category_description;
+           //    self.nicotineReport = self.allReportDataArray[21].category_description;
                self.nicotineRisk = 'High Risk Value';
                self.nicotineDisplay = 'Yes';
                self.nicotineClass = 'bg-danger';
@@ -363,17 +364,17 @@ myApp.service('ScoringService', ['$http', '$location', 'UserService', function($
            }
    
            if (data[0].sleep_score === 10) {
-               self.sleepReport = self.allReportDataArray[22].category_description;
+            //   self.sleepReport = self.allReportDataArray[22].category_description;
                self.sleepRisk = 'Low Risk Value';
                self.sleepClass = 'bg-success';
                self.sleepShow = 0;
            } else if (data[0].sleep_score === 4) {
-            self.sleepReport = self.allReportDataArray[23].category_description;
+         //   self.sleepReport = self.allReportDataArray[23].category_description;
             self.sleepRisk = 'Moderate Risk Value';
             self.sleepClass = 'bg-warning';
             self.sleepShow = 1;
             } else if (data[0].sleep_score === 0) {
-               self.sleepReport = self.allReportDataArray[23].category_description;
+            //   self.sleepReport = self.allReportDataArray[23].category_description;
                self.sleepRisk = 'High Risk Value';
                self.sleepClass = 'bg-danger';
                self.sleepShow = 1;
@@ -386,32 +387,32 @@ myApp.service('ScoringService', ['$http', '$location', 'UserService', function($
            self.mybmi = bmiScoreUse;
    
            if (bmiScoreUse < 25) {
-               self.bmiReport = self.allReportDataArray[27].category_description;
+            //   self.bmiReport = self.allReportDataArray[27].category_description;
                self.bmiRisk = 'Optimal Value';
                self.bmiClass = 'bg-success';
                self.bmiShow = 0;
            } else if (bmiScoreUse > 24.99 && bmiScoreUse < 30) {
-               self.bmiReport = self.allReportDataArray[28].category_description;
+            //   self.bmiReport = self.allReportDataArray[28].category_description;
                self.bmiRisk = 'Moderate Value';
                self.bmiClass = 'bg-warning';
                self.bmiShow = 1;
            } else if (bmiScoreUse > 29.99) {
-               self.bmiReport = self.allReportDataArray[29].category_description;
+            //   self.bmiReport = self.allReportDataArray[29].category_description;
                self.bmiRisk = 'High Value';
                self.bmiClass = 'bg-danger';
                self.bmiShow = 1;
            }
    
            if (data[0].well_score > 79) {
-               self.wellReport = self.allReportDataArray[30].category_description;
+             //  self.wellReport = self.allReportDataArray[30].category_description;
                self.wellRisk = 'Low Risk Score';
                self.wellClass = 'bg-success';
            } else if (data[0].well_score < 80 && data[0].well_score > 49) {
-               self.wellReport = self.allReportDataArray[31].category_description;
+           //    self.wellReport = self.allReportDataArray[31].category_description;
                self.wellRisk = 'Moderate Risk Score';
                self.wellClass = 'bg-warning';
            } else if (data[0].well_score < 50) {
-               self.wellReport = self.allReportDataArray[50].category_description;
+             //  self.wellReport = self.allReportDataArray[50].category_description;
                self.wellRisk = 'High Risk Score';
                self.wellClass = 'bg-danger';
            }
